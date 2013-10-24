@@ -72,6 +72,7 @@ function shootRay(){
 	else if(Physics.Raycast(rayGround, hitGround, Mathf.Infinity, groundLayerMask)){
 		clearSelected();
 		selectionPointStart = hitGround.point;
+		Debug.Log(hitGround.point);
 	}
 }
 

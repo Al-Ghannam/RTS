@@ -8,7 +8,7 @@ public class GridGraph : MonoBehaviour {
 	public int depth{get; set;} //Depth of the grid (in nodes).
 	public Vector3 center{get; set;} //Center of graph.
 	public Vector3 rotation{get; set;} //Rotation of graph.
-	public float nodeSize = 1;
+	public float nodeSize = 30F;
 	
 	//Which axis to measure the climbing on. X=0, Y=1, Z=2
 	public int maxClimbAxis = 1;
@@ -33,9 +33,9 @@ public class GridGraph : MonoBehaviour {
 	public Matrix4x4 boundsMatrix; //Matrix mainly for visualizing the grid.
 	public Matrix4x4 matrix; // Matrix for translating, rotating, and scaling the graph.
 	
-	public GridGraph(){
-		gridSize = new Vector2(10,10);
-		nodeSize = 1F;
+	void Start(){
+		//gridSize = new Vector2(10,10);
+		//nodeSize = 50F;
 	}
 	
 	/* Sets Grid size based on Width and Depth,
@@ -45,6 +45,7 @@ public class GridGraph : MonoBehaviour {
 		gridSize = new Vector2(width,depth)*nodeSize;
 		generateMatrix();
 	}
+	
 	/* Shame to say this is entirely copied from Aron Granberg's.
 	 * This generates the matrix by which I know where each node
 	 * on the grid actually is in world coordinates.
@@ -78,7 +79,6 @@ public class GridGraph : MonoBehaviour {
 			tmp[i] = new GridNode();	
 		}
 		nodes = tmp;
-		Debug.Log(nodes.Length);
 	}
 	
 	/** Visualize a node surrounded by 8 other nodes. Four cross, one on each side,
@@ -158,6 +158,10 @@ public class GridGraph : MonoBehaviour {
 			if(Physics.Raycast(node.position+Vector3.up*100,
 				-Vector3.up,out hit,100.0F+.005F,heightMask)){
 				node.position = hit.point;
+				if(hit.point.y > 33 && hit.point.y < 40){
+					Debug.Log(hit.point);
+					Debug.Log(hit.collider);
+				}
 			}
 			else{
 				walkable = false;
@@ -213,13 +217,28 @@ public class GridGraph : MonoBehaviour {
 	
 	
 	public void OnDrawGizmos(){		
-		Gizmos.color = Color.yellow;
-		Gizmos.DrawLine(new Vector3(110,1,10), new Vector3(10,1,10));
+		Gizmos.color = Color.white;
+		//Gizmos.DrawLine(new Vector3(110,1,10), new Vector3(10,1,10));
 		//Gizmos.matrix = boundsMatrix;
 		
-		Debug.Log(gridSize.x);
-		//Debug.Log(gridSize.y);
 		Gizmos.DrawWireCube(new Vector3(0,0,0), new Vector3(gridSize.x,0,gridSize.y));
+		
+		//Draw nodes.
+		for(int i=0; i<nodes.Length; i++){
+			if(nodes[i].position.y > 58) Gizmos.color = Color.red;
+			else Gizmos.color = Color.green;
+			if(nodes[i].walkable)
+				Gizmos.DrawSphere(nodes[i].position,2F);
+			for(int j=0; j<8; j++){
+				Gizmos.color = Color.white;
+				if(nodes[i].getConnection(j))
+					Gizmos.DrawLine(nodes[i].position,
+						nodes[(nodes[i].getIndex()+neighbourOffsets[j])].position);
+			}
+		}
+		
+		//Draw connections.
+		
 		//Gizmos.matrix = Matrix4x4.identity;
 	}
 	

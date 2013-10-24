@@ -5,8 +5,6 @@ public class Test : MonoBehaviour {
 	
 	public GameObject plane;
 	public int nodeSize = 1;
-	public Matrix4x4 boundsMatrix;
-	public Vector2 gridSize;
 	float width, depth;
 	// Use this for initialization
 	void Start () {
@@ -22,7 +20,6 @@ public class Test : MonoBehaviour {
 		grid.width = (int)width;
 		grid.depth = (int)depth;
 		grid.rotation = rotation;
-		Debug.Log(width);
 		grid.setGraphSize();
 		grid.scan();
 	}
@@ -33,6 +30,5 @@ public class Test : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
 	}
 }
