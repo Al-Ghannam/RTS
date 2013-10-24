@@ -1,17 +1,6 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-
-public class GraphGeneration : MonoBehaviour {
-	float gridMaxX = 100;
-	float gridMaxY = 100;
-	float currentX = 0;
-	float currentY = 0;
-	float deltaX = 1;
-	float deltaY = 1;
-	
-	
-}
 
 public class Connection{
 	Node fromNode;
