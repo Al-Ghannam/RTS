@@ -21,7 +21,11 @@ public class GridNode{
 	//The first 24 bits, of indices, carry the index of this node in the graph specified by the last 8 bits.
 	int indices;
 	public Vector3 position;
-	
+    public int curent_list=2;
+    public float cost=0;
+    public float h_cost=0;
+    public float g_cost=0;
+    public GridNode parent_node = null;
 	public bool walkable{
 		get{
 			return ((flags >> 8) & 1) != 0;
@@ -30,7 +34,61 @@ public class GridNode{
 			flags = (flags & ~0x100) | (value ? 0x100 : 0);
 		}
 	}
-	
+    public int status //holding its status openlist, closed list or not in either of them
+    {
+        get
+        {
+            return curent_list;
+        }
+        set
+        {
+            curent_list = status;
+        }
+    }
+    public float fcost 
+    {
+        get
+        {
+            return cost;
+        }
+        set
+        {
+            cost = fcost;
+        }
+    }
+    public float hcost
+    {
+        get
+        {
+            return h_cost;
+        }
+        set
+        {
+            h_cost = hcost;
+        }
+    }
+    public float gcost
+    {
+        get
+        {
+            return g_cost;
+        }
+        set
+        {
+            g_cost = gcost;
+        }
+    }
+    public GridNode previous_node
+    {
+        get
+        {
+            return parent_node;
+        }
+        set
+        {
+            parent_node = previous_node;
+        }
+    }
 	public bool getConnection(int neighbourBit){
 		return ((flags >> neighbourBit) & 1) == 1;
 	}
