@@ -1,13 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\AStar_Simple.cs">
+    <Files>
+      <File FileName="Assets\Scripts\AStar_Simple.cs" Line="55" Column="24" />
+      <File FileName="Assets\Scripts\Test.cs" Line="31" Column="29" />
+      <File FileName="Assets\Scripts\GridGraph.cs" Line="228" Column="3" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="F:\Unity Projects\RTS-master\Assets\Scripts\AStar_Simple.cs" line="131" />
-      <Breakpoint file="F:\Unity Projects\RTS-master\Assets\Scripts\AStar_Simple.cs" line="130" />
-      <Breakpoint file="F:\Unity Projects\RTS-master\Assets\Scripts\AStar_Simple.cs" line="127" />
-      <Breakpoint file="F:\Unity Projects\RTS-master\Assets\Scripts\Test.cs" line="34" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

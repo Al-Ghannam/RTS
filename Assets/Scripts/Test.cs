@@ -26,28 +26,26 @@ public class Test : MonoBehaviour {
 		grid.scan();
 		GameObject aStarCarrier = new GameObject("AStarCarrier");
 		GridNode start = new GridNode();
-		start = grid.getNodes()[40];
+		start = grid.getNodes()[2];
 		GridNode goal = new GridNode();
-		goal = grid.getNodes()[50];
+		goal = grid.getNodes()[120];
 		Debug.Log(start.position);
 		A_Star aStar = aStarCarrier.AddComponent<A_Star>();
 		aStar.A_StarSetGrid(grid);
 		path = aStar.FindVectorPath(start, goal);
+        Debug.Log(path.Count);
 	}
 	
-	void OnDrawGizmos(){
-		//Gizmos.color = Color.white;
-		//Gizmos.DrawLine(new Vector3(110,1,10), new Vector3(10,1,10));
-		//Gizmos.matrix = boundsMatrix;
-		
-		//Gizmos.DrawWireCube(new Vector3(0,0,0), new Vector3(gridSize.x,0,gridSize.y));
+	public void OnDrawGizmos(){		
 		
 		//Draw nodes.
-		/*foreach(Vector3 pos in path){
-			if(pos.y > 58) Gizmos.color = Color.red;
-			else Gizmos.color = Color.green;
-			Gizmos.DrawSphere(pos,2F);
-		}*/
+		for(int i=0; i<path.Count; i++){
+			Gizmos.color = Color.blue;
+			Gizmos.DrawSphere(path[i],2F);
+			Gizmos.color = Color.green;
+			if(i < path.Count-1)
+				Gizmos.DrawLine(path[i],path[i+1]);
+		}
 	}
 	
 	// Update is called once per frame

@@ -26,7 +26,6 @@ public class A_Star : MonoBehaviour
         private float gcost;
         private float hcost;
         private float fcost;
-
         private GridNode current_node;
         public void setnode(GridNode node)
         {
@@ -61,10 +60,7 @@ public class A_Star : MonoBehaviour
         }
         public void setgcost(float prev_cost)
         {
-			if(prev_cost==0)
-				gcost=prev_cost;
-			else
-            	gcost = prev_cost + 1;
+            gcost = prev_cost + 1;
             fcost = hcost + gcost;
         }
         public void sethcost(float cost)
@@ -80,6 +76,7 @@ public class A_Star : MonoBehaviour
     }
     //aray of struct grid node  holding grid nodes and all its associated data
     private NodeStruct nodeStruct;
+	private GridNode start_node;
     //Constructor
     public A_Star()
     {
@@ -88,21 +85,16 @@ public class A_Star : MonoBehaviour
 
     public void A_StarSetGrid(GridGraph gridGraph){
         grid = gridGraph;
-		GridNode testNode = grid.getNodes()[40];
         nodeStruct = new NodeStruct();
-		/*
-        for (int i = 0; i < grid.getNodes().Length; i++)
-        {
-            nodes[i].setgcost(0);
-            nodes[i].sethcost(0);
-            nodes[i].setnode(grid.getNodes()[i]);
-            lookup_node.Add(nodes[i].get_position(), nodes[i]);
-        }*/
+        nodeStruct.set_list(current_neither);
+        nodeStruct.setgcost(-1);
+        nodeStruct.sethcost(0);
     }
 
     //Methods
     public List<Vector3> FindVectorPath(GridNode currentGridNode, GridNode targetGridNode)
     {
+		start_node=currentGridNode;
         Vector3 origPosition = currentGridNode.position;
         CurrentGridNode = currentGridNode;
 		nodeStruct.setgcost(0);
@@ -120,16 +112,15 @@ public class A_Star : MonoBehaviour
         }
 
         EndSearch = false;
-		Debug.Log(currentGridNode.position);
         lookup_node[CurrentGridNode.position].set_list(current_open);
         Openlist.Clear();
         Openlist.Add(lookup_node[CurrentGridNode.position]);
         lookup_node[CurrentGridNode.position].setgcost(0);
-        do
-        {
-            Debug.Log("node");
+       do
+      {
 			FindCheapestGridNode();//updates the currentgridnode with the cheapest node
-			
+
+            Debug.Log("node " + CurrentGridNode.position);
             //add current node to closed list
             lookup_node[CurrentGridNode.position].set_list(current_closed);
             if (CurrentGridNode.position == GoalGridNode.position)
@@ -141,30 +132,33 @@ public class A_Star : MonoBehaviour
                 {
                     current_adj.set_prev_position(CurrentGridNode.position);// set current node as previous for this node
                     current_adj.sethcost(Heuristic_Euclidean(current_adj.get_position().x, current_adj.get_position().y));// set h costs of this node (estimated costs to goal)
-                    current_adj.setgcost(lookup_node[CurrentGridNode.position].get_gcost()); // set g costs of this node (costs from start to this node)
-                    Openlist.Add(current_adj);// add node to openList
+                    //current_adj.setgcost(lookup_node[CurrentGridNode.position].get_gcost()); // set g costs of this node (costs from start to this node)
                     current_adj.set_list(current_open);
+                    Openlist.Add(current_adj);// add node to openList
+                    lookup_node[current_adj.get_position()] = current_adj;
+                    Debug.Log("adjacent " + current_adj.get_position()+" option 1");
                 }
-                else {
+                else if (current_adj.get_list() == current_open)
+                {
                     // node is in openList
                     if (current_adj.get_gcost() > lookup_node[CurrentGridNode.position].get_gcost())
                     { // costs from current node are cheaper than previous costs
                         current_adj.set_prev_position(CurrentGridNode.position); // set current node as previous for this node
                         current_adj.setgcost(lookup_node[CurrentGridNode.position].get_gcost());// set g costs of this node (costs from start to this node)
+                        lookup_node[current_adj.get_position()] = current_adj;
+                        Debug.Log("adjacent " + current_adj.get_position());
                     }
                 }
             }
-            //If we're out of open GridNodes then return
-            if (Openlist.Count == 0 && !EndSearch)
-            {
-
-                return new List<Vector3>
-				{
-					origPosition,
-				};
-            }
+			if(Openlist.Count==0 && !EndSearch)
+			{
+				return new List<Vector3>
+			{
+				origPosition,
+			};
+			}
         } while (EndSearch == false);
-
+        
 
         return FindRoute();
     }
@@ -180,22 +174,33 @@ public class A_Star : MonoBehaviour
             -width,1,width,-1,
             -width+1,width+1,width-1,-width-1
         };
+		int count = 0;
         for(int i=0; i<8; i++){
-            if(node.getConnection(i))
+			if (node.getConnection(i))
 			{
-				
+				count++;
+				GridNode tempNode = grid.getNodes()[node.getIndex() + neighbourOffsets[i]];
 				try{
-				nodeStruct.setgcost(0);
-				nodeStruct.sethcost(0);
-				nodeStruct.setnode(grid.getNodes()[node.getIndex() + neighbourOffsets[i]]);
-				lookup_node.Add(grid.getNodes()[node.getIndex() + neighbourOffsets[i]].position,nodeStruct);
-				}catch(Exception ee){
-					nodeStruct = lookup_node[grid.getNodes()[node.getIndex() + neighbourOffsets[i]].position];
-					
+				nodeStruct=lookup_node[tempNode.position];
 				}
+				catch(Exception ee){
+					nodeStruct = new NodeStruct();
+					nodeStruct.set_list(current_neither);
+					
+					nodeStruct.setgcost(node1.get_gcost());
+					nodeStruct.setnode(tempNode);
+					lookup_node.Add(tempNode.position,nodeStruct);
+				}
+            if (nodeStruct.get_list()!=current_closed)
+			{
+					nodeStruct = lookup_node[grid.getNodes()[node.getIndex() + neighbourOffsets[i]].position];
                 temp.Add(nodeStruct);
 			}
+			}
         }
+		Debug.LogWarning(count);
+		if(temp.Count==0)
+			Debug.LogWarning(node1.get_position());
         return temp;
     }
     private float Heuristic_Diagonal(float x, float y)
@@ -204,8 +209,6 @@ public class A_Star : MonoBehaviour
         float dy = Mathf.Abs(GoalGridNode.position.y - y);
 
         float min_d = Mathf.Min(dx, dy);
-
-        float h_travel = dx + dy;
 
         return ((min_d) + (((2 * min_d))));
     }
@@ -243,6 +246,12 @@ public class A_Star : MonoBehaviour
         {
             EndSearch = true;
         }
+
+        Openlist.Remove(lookup_node[CurrentGridNode.position]);
+      NodeStruct node= lookup_node[CurrentGridNode.position];
+        node.set_list(current_closed);
+        lookup_node[CurrentGridNode.position] = node;
+		Debug.LogWarning("chosen node  index: "+node.getnode().getIndex());
     }
 
 
@@ -256,8 +265,10 @@ public class A_Star : MonoBehaviour
         {
             path.Add(CurrentGridNode.position);
             CurrentGridNode =lookup_node[lookup_node[CurrentGridNode.position].get_prev_position()].getnode();
-        } while (lookup_node[lookup_node[CurrentGridNode.position].get_prev_position()].getnode() != null);
 
+        } while (CurrentGridNode.position!=start_node.position);
         return path;
     }
+	
 }
+
