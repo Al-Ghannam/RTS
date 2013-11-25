@@ -1,0 +1,1039 @@
+<?xml version="1.0"?>
+<Grid width = "16"
+depth = "16"
+center = "(0.0, 0.0, 0.0)"
+rotation = "(0.0, 0.0, 0.0)"
+nodeSize = "30"
+maxClimbAxis = "1"
+maxClimb = "0.4"
+maxSlope = "90"
+heightCheck = "True"
+heightMask = "UnityEngine.LayerMask"
+numOfNeighbours = "8">
+<Nodes count = "256">
+<node 
+flags = "294"
+indices = "0"
+position = "(-225.0, 0.0, -225.0)" />
+<node 
+flags = "366"
+indices = "1"
+position = "(-195.0, 0.0, -225.0)" />
+<node 
+flags = "366"
+indices = "2"
+position = "(-165.0, 0.0, -225.0)" />
+<node 
+flags = "366"
+indices = "3"
+position = "(-135.0, 0.0, -225.0)" />
+<node 
+flags = "366"
+indices = "4"
+position = "(-105.0, 0.0, -225.0)" />
+<node 
+flags = "366"
+indices = "5"
+position = "(-75.0, 0.0, -225.0)" />
+<node 
+flags = "366"
+indices = "6"
+position = "(-45.0, 0.0, -225.0)" />
+<node 
+flags = "366"
+indices = "7"
+position = "(-15.0, 0.0, -225.0)" />
+<node 
+flags = "366"
+indices = "8"
+position = "(15.0, 0.0, -225.0)" />
+<node 
+flags = "366"
+indices = "9"
+position = "(45.0, 0.0, -225.0)" />
+<node 
+flags = "366"
+indices = "10"
+position = "(75.0, 0.0, -225.0)" />
+<node 
+flags = "366"
+indices = "11"
+position = "(105.0, 0.0, -225.0)" />
+<node 
+flags = "366"
+indices = "12"
+position = "(135.0, 0.0, -225.0)" />
+<node 
+flags = "366"
+indices = "13"
+position = "(165.0, 0.0, -225.0)" />
+<node 
+flags = "366"
+indices = "14"
+position = "(195.0, 0.0, -225.0)" />
+<node 
+flags = "332"
+indices = "15"
+position = "(225.0, 0.0, -225.0)" />
+<node 
+flags = "311"
+indices = "16"
+position = "(-225.0, 0.0, -195.0)" />
+<node 
+flags = "511"
+indices = "17"
+position = "(-195.0, 0.0, -195.0)" />
+<node 
+flags = "511"
+indices = "18"
+position = "(-165.0, 0.0, -195.0)" />
+<node 
+flags = "511"
+indices = "19"
+position = "(-135.0, 0.0, -195.0)" />
+<node 
+flags = "511"
+indices = "20"
+position = "(-105.0, 0.0, -195.0)" />
+<node 
+flags = "511"
+indices = "21"
+position = "(-75.0, 0.0, -195.0)" />
+<node 
+flags = "511"
+indices = "22"
+position = "(-45.0, 0.0, -195.0)" />
+<node 
+flags = "511"
+indices = "23"
+position = "(-15.0, 0.0, -195.0)" />
+<node 
+flags = "511"
+indices = "24"
+position = "(15.0, 0.0, -195.0)" />
+<node 
+flags = "479"
+indices = "25"
+position = "(45.0, 0.0, -195.0)" />
+<node 
+flags = "475"
+indices = "26"
+position = "(75.0, 0.0, -195.0)" />
+<node 
+flags = "443"
+indices = "27"
+position = "(105.0, 0.0, -195.0)" />
+<node 
+flags = "447"
+indices = "28"
+position = "(135.0, 0.0, -195.0)" />
+<node 
+flags = "511"
+indices = "29"
+position = "(165.0, 0.0, -195.0)" />
+<node 
+flags = "511"
+indices = "30"
+position = "(195.0, 0.0, -195.0)" />
+<node 
+flags = "461"
+indices = "31"
+position = "(225.0, 0.0, -195.0)" />
+<node 
+flags = "311"
+indices = "32"
+position = "(-225.0, 0.0, -165.0)" />
+<node 
+flags = "511"
+indices = "33"
+position = "(-195.0, 0.0, -165.0)" />
+<node 
+flags = "479"
+indices = "34"
+position = "(-165.0, 0.0, -165.0)" />
+<node 
+flags = "475"
+indices = "35"
+position = "(-135.0, 0.0, -165.0)" />
+<node 
+flags = "443"
+indices = "36"
+position = "(-105.0, 0.0, -165.0)" />
+<node 
+flags = "447"
+indices = "37"
+position = "(-75.0, 0.0, -165.0)" />
+<node 
+flags = "511"
+indices = "38"
+position = "(-45.0, 0.0, -165.0)" />
+<node 
+flags = "511"
+indices = "39"
+position = "(-15.0, 0.0, -165.0)" />
+<node 
+flags = "511"
+indices = "40"
+position = "(15.0, 0.0, -165.0)" />
+<node 
+flags = "477"
+indices = "41"
+position = "(45.0, 0.0, -165.0)" />
+<node 
+flags = "294"
+indices = "42"
+position = "(75.0, 50.0, -165.0)" />
+<node 
+flags = "332"
+indices = "43"
+position = "(105.0, 50.0, -165.0)" />
+<node 
+flags = "439"
+indices = "44"
+position = "(135.0, 0.0, -165.0)" />
+<node 
+flags = "511"
+indices = "45"
+position = "(165.0, 0.0, -165.0)" />
+<node 
+flags = "511"
+indices = "46"
+position = "(195.0, 0.0, -165.0)" />
+<node 
+flags = "461"
+indices = "47"
+position = "(225.0, 0.0, -165.0)" />
+<node 
+flags = "311"
+indices = "48"
+position = "(-225.0, 0.0, -135.0)" />
+<node 
+flags = "511"
+indices = "49"
+position = "(-195.0, 0.0, -135.0)" />
+<node 
+flags = "477"
+indices = "50"
+position = "(-165.0, 0.0, -135.0)" />
+<node 
+flags = "294"
+indices = "51"
+position = "(-135.0, 50.0, -135.0)" />
+<node 
+flags = "332"
+indices = "52"
+position = "(-105.0, 50.0, -135.0)" />
+<node 
+flags = "439"
+indices = "53"
+position = "(-75.0, 0.0, -135.0)" />
+<node 
+flags = "511"
+indices = "54"
+position = "(-45.0, 0.0, -135.0)" />
+<node 
+flags = "511"
+indices = "55"
+position = "(-15.0, 0.0, -135.0)" />
+<node 
+flags = "511"
+indices = "56"
+position = "(15.0, 0.0, -135.0)" />
+<node 
+flags = "493"
+indices = "57"
+position = "(45.0, 0.0, -135.0)" />
+<node 
+flags = "275"
+indices = "58"
+position = "(75.0, 50.0, -135.0)" />
+<node 
+flags = "393"
+indices = "59"
+position = "(105.0, 50.0, -135.0)" />
+<node 
+flags = "375"
+indices = "60"
+position = "(135.0, 0.0, -135.0)" />
+<node 
+flags = "511"
+indices = "61"
+position = "(165.0, 0.0, -135.0)" />
+<node 
+flags = "511"
+indices = "62"
+position = "(195.0, 0.0, -135.0)" />
+<node 
+flags = "461"
+indices = "63"
+position = "(225.0, 0.0, -135.0)" />
+<node 
+flags = "311"
+indices = "64"
+position = "(-225.0, 0.0, -105.0)" />
+<node 
+flags = "511"
+indices = "65"
+position = "(-195.0, 0.0, -105.0)" />
+<node 
+flags = "493"
+indices = "66"
+position = "(-165.0, 0.0, -105.0)" />
+<node 
+flags = "275"
+indices = "67"
+position = "(-135.0, 50.0, -105.0)" />
+<node 
+flags = "393"
+indices = "68"
+position = "(-105.0, 50.0, -105.0)" />
+<node 
+flags = "375"
+indices = "69"
+position = "(-75.0, 0.0, -105.0)" />
+<node 
+flags = "511"
+indices = "70"
+position = "(-45.0, 0.0, -105.0)" />
+<node 
+flags = "511"
+indices = "71"
+position = "(-15.0, 0.0, -105.0)" />
+<node 
+flags = "511"
+indices = "72"
+position = "(15.0, 0.0, -105.0)" />
+<node 
+flags = "495"
+indices = "73"
+position = "(45.0, 0.0, -105.0)" />
+<node 
+flags = "494"
+indices = "74"
+position = "(75.0, 0.0, -105.0)" />
+<node 
+flags = "382"
+indices = "75"
+position = "(105.0, 0.0, -105.0)" />
+<node 
+flags = "383"
+indices = "76"
+position = "(135.0, 0.0, -105.0)" />
+<node 
+flags = "511"
+indices = "77"
+position = "(165.0, 0.0, -105.0)" />
+<node 
+flags = "511"
+indices = "78"
+position = "(195.0, 0.0, -105.0)" />
+<node 
+flags = "461"
+indices = "79"
+position = "(225.0, 0.0, -105.0)" />
+<node 
+flags = "311"
+indices = "80"
+position = "(-225.0, 0.0, -75.0)" />
+<node 
+flags = "511"
+indices = "81"
+position = "(-195.0, 0.0, -75.0)" />
+<node 
+flags = "495"
+indices = "82"
+position = "(-165.0, 0.0, -75.0)" />
+<node 
+flags = "494"
+indices = "83"
+position = "(-135.0, 0.0, -75.0)" />
+<node 
+flags = "382"
+indices = "84"
+position = "(-105.0, 0.0, -75.0)" />
+<node 
+flags = "383"
+indices = "85"
+position = "(-75.0, 0.0, -75.0)" />
+<node 
+flags = "511"
+indices = "86"
+position = "(-45.0, 0.0, -75.0)" />
+<node 
+flags = "511"
+indices = "87"
+position = "(-15.0, 0.0, -75.0)" />
+<node 
+flags = "511"
+indices = "88"
+position = "(15.0, 0.0, -75.0)" />
+<node 
+flags = "511"
+indices = "89"
+position = "(45.0, 0.0, -75.0)" />
+<node 
+flags = "511"
+indices = "90"
+position = "(75.0, 0.0, -75.0)" />
+<node 
+flags = "511"
+indices = "91"
+position = "(105.0, 0.0, -75.0)" />
+<node 
+flags = "511"
+indices = "92"
+position = "(135.0, 0.0, -75.0)" />
+<node 
+flags = "511"
+indices = "93"
+position = "(165.0, 0.0, -75.0)" />
+<node 
+flags = "511"
+indices = "94"
+position = "(195.0, 0.0, -75.0)" />
+<node 
+flags = "461"
+indices = "95"
+position = "(225.0, 0.0, -75.0)" />
+<node 
+flags = "311"
+indices = "96"
+position = "(-225.0, 0.0, -45.0)" />
+<node 
+flags = "511"
+indices = "97"
+position = "(-195.0, 0.0, -45.0)" />
+<node 
+flags = "511"
+indices = "98"
+position = "(-165.0, 0.0, -45.0)" />
+<node 
+flags = "511"
+indices = "99"
+position = "(-135.0, 0.0, -45.0)" />
+<node 
+flags = "511"
+indices = "100"
+position = "(-105.0, 0.0, -45.0)" />
+<node 
+flags = "511"
+indices = "101"
+position = "(-75.0, 0.0, -45.0)" />
+<node 
+flags = "479"
+indices = "102"
+position = "(-45.0, 0.0, -45.0)" />
+<node 
+flags = "507"
+indices = "103"
+position = "(-15.0, 0.0, -45.0)" />
+<node 
+flags = "447"
+indices = "104"
+position = "(15.0, 0.0, -45.0)" />
+<node 
+flags = "511"
+indices = "105"
+position = "(45.0, 0.0, -45.0)" />
+<node 
+flags = "511"
+indices = "106"
+position = "(75.0, 0.0, -45.0)" />
+<node 
+flags = "511"
+indices = "107"
+position = "(105.0, 0.0, -45.0)" />
+<node 
+flags = "511"
+indices = "108"
+position = "(135.0, 0.0, -45.0)" />
+<node 
+flags = "511"
+indices = "109"
+position = "(165.0, 0.0, -45.0)" />
+<node 
+flags = "511"
+indices = "110"
+position = "(195.0, 0.0, -45.0)" />
+<node 
+flags = "461"
+indices = "111"
+position = "(225.0, 0.0, -45.0)" />
+<node 
+flags = "311"
+indices = "112"
+position = "(-225.0, 0.0, -15.0)" />
+<node 
+flags = "511"
+indices = "113"
+position = "(-195.0, 0.0, -15.0)" />
+<node 
+flags = "511"
+indices = "114"
+position = "(-165.0, 0.0, -15.0)" />
+<node 
+flags = "511"
+indices = "115"
+position = "(-135.0, 0.0, -15.0)" />
+<node 
+flags = "511"
+indices = "116"
+position = "(-105.0, 0.0, -15.0)" />
+<node 
+flags = "511"
+indices = "117"
+position = "(-75.0, 0.0, -15.0)" />
+<node 
+flags = "477"
+indices = "118"
+position = "(-45.0, 0.0, -15.0)" />
+<node 
+flags = "256"
+indices = "119"
+position = "(-15.0, 38.8, -15.0)" />
+<node 
+flags = "435"
+indices = "120"
+position = "(15.0, 0.0, -15.0)" />
+<node 
+flags = "447"
+indices = "121"
+position = "(45.0, 0.0, -15.0)" />
+<node 
+flags = "511"
+indices = "122"
+position = "(75.0, 0.0, -15.0)" />
+<node 
+flags = "511"
+indices = "123"
+position = "(105.0, 0.0, -15.0)" />
+<node 
+flags = "511"
+indices = "124"
+position = "(135.0, 0.0, -15.0)" />
+<node 
+flags = "511"
+indices = "125"
+position = "(165.0, 0.0, -15.0)" />
+<node 
+flags = "511"
+indices = "126"
+position = "(195.0, 0.0, -15.0)" />
+<node 
+flags = "461"
+indices = "127"
+position = "(225.0, 0.0, -15.0)" />
+<node 
+flags = "311"
+indices = "128"
+position = "(-225.0, 0.0, 15.0)" />
+<node 
+flags = "511"
+indices = "129"
+position = "(-195.0, 0.0, 15.0)" />
+<node 
+flags = "511"
+indices = "130"
+position = "(-165.0, 0.0, 15.0)" />
+<node 
+flags = "511"
+indices = "131"
+position = "(-135.0, 0.0, 15.0)" />
+<node 
+flags = "511"
+indices = "132"
+position = "(-105.0, 0.0, 15.0)" />
+<node 
+flags = "511"
+indices = "133"
+position = "(-75.0, 0.0, 15.0)" />
+<node 
+flags = "493"
+indices = "134"
+position = "(-45.0, 0.0, 15.0)" />
+<node 
+flags = "256"
+indices = "135"
+position = "(-15.0, 46.3, 15.0)" />
+<node 
+flags = "256"
+indices = "136"
+position = "(15.0, 28.7, 15.0)" />
+<node 
+flags = "503"
+indices = "137"
+position = "(45.0, 0.0, 15.0)" />
+<node 
+flags = "511"
+indices = "138"
+position = "(75.0, 0.0, 15.0)" />
+<node 
+flags = "511"
+indices = "139"
+position = "(105.0, 0.0, 15.0)" />
+<node 
+flags = "511"
+indices = "140"
+position = "(135.0, 0.0, 15.0)" />
+<node 
+flags = "511"
+indices = "141"
+position = "(165.0, 0.0, 15.0)" />
+<node 
+flags = "511"
+indices = "142"
+position = "(195.0, 0.0, 15.0)" />
+<node 
+flags = "461"
+indices = "143"
+position = "(225.0, 0.0, 15.0)" />
+<node 
+flags = "311"
+indices = "144"
+position = "(-225.0, 0.0, 45.0)" />
+<node 
+flags = "511"
+indices = "145"
+position = "(-195.0, 0.0, 45.0)" />
+<node 
+flags = "511"
+indices = "146"
+position = "(-165.0, 0.0, 45.0)" />
+<node 
+flags = "511"
+indices = "147"
+position = "(-135.0, 0.0, 45.0)" />
+<node 
+flags = "511"
+indices = "148"
+position = "(-105.0, 0.0, 45.0)" />
+<node 
+flags = "511"
+indices = "149"
+position = "(-75.0, 0.0, 45.0)" />
+<node 
+flags = "495"
+indices = "150"
+position = "(-45.0, 0.0, 45.0)" />
+<node 
+flags = "494"
+indices = "151"
+position = "(-15.0, 0.0, 45.0)" />
+<node 
+flags = "382"
+indices = "152"
+position = "(15.0, 0.0, 45.0)" />
+<node 
+flags = "383"
+indices = "153"
+position = "(45.0, 0.0, 45.0)" />
+<node 
+flags = "511"
+indices = "154"
+position = "(75.0, 0.0, 45.0)" />
+<node 
+flags = "511"
+indices = "155"
+position = "(105.0, 0.0, 45.0)" />
+<node 
+flags = "511"
+indices = "156"
+position = "(135.0, 0.0, 45.0)" />
+<node 
+flags = "511"
+indices = "157"
+position = "(165.0, 0.0, 45.0)" />
+<node 
+flags = "511"
+indices = "158"
+position = "(195.0, 0.0, 45.0)" />
+<node 
+flags = "461"
+indices = "159"
+position = "(225.0, 0.0, 45.0)" />
+<node 
+flags = "311"
+indices = "160"
+position = "(-225.0, 0.0, 75.0)" />
+<node 
+flags = "511"
+indices = "161"
+position = "(-195.0, 0.0, 75.0)" />
+<node 
+flags = "511"
+indices = "162"
+position = "(-165.0, 0.0, 75.0)" />
+<node 
+flags = "511"
+indices = "163"
+position = "(-135.0, 0.0, 75.0)" />
+<node 
+flags = "511"
+indices = "164"
+position = "(-105.0, 0.0, 75.0)" />
+<node 
+flags = "511"
+indices = "165"
+position = "(-75.0, 0.0, 75.0)" />
+<node 
+flags = "511"
+indices = "166"
+position = "(-45.0, 0.0, 75.0)" />
+<node 
+flags = "511"
+indices = "167"
+position = "(-15.0, 0.0, 75.0)" />
+<node 
+flags = "511"
+indices = "168"
+position = "(15.0, 0.0, 75.0)" />
+<node 
+flags = "511"
+indices = "169"
+position = "(45.0, 0.0, 75.0)" />
+<node 
+flags = "511"
+indices = "170"
+position = "(75.0, 0.0, 75.0)" />
+<node 
+flags = "479"
+indices = "171"
+position = "(105.0, 0.0, 75.0)" />
+<node 
+flags = "507"
+indices = "172"
+position = "(135.0, 0.0, 75.0)" />
+<node 
+flags = "447"
+indices = "173"
+position = "(165.0, 0.0, 75.0)" />
+<node 
+flags = "511"
+indices = "174"
+position = "(195.0, 0.0, 75.0)" />
+<node 
+flags = "461"
+indices = "175"
+position = "(225.0, 0.0, 75.0)" />
+<node 
+flags = "311"
+indices = "176"
+position = "(-225.0, 0.0, 105.0)" />
+<node 
+flags = "511"
+indices = "177"
+position = "(-195.0, 0.0, 105.0)" />
+<node 
+flags = "511"
+indices = "178"
+position = "(-165.0, 0.0, 105.0)" />
+<node 
+flags = "511"
+indices = "179"
+position = "(-135.0, 0.0, 105.0)" />
+<node 
+flags = "511"
+indices = "180"
+position = "(-105.0, 0.0, 105.0)" />
+<node 
+flags = "511"
+indices = "181"
+position = "(-75.0, 0.0, 105.0)" />
+<node 
+flags = "511"
+indices = "182"
+position = "(-45.0, 0.0, 105.0)" />
+<node 
+flags = "511"
+indices = "183"
+position = "(-15.0, 0.0, 105.0)" />
+<node 
+flags = "511"
+indices = "184"
+position = "(15.0, 0.0, 105.0)" />
+<node 
+flags = "511"
+indices = "185"
+position = "(45.0, 0.0, 105.0)" />
+<node 
+flags = "511"
+indices = "186"
+position = "(75.0, 0.0, 105.0)" />
+<node 
+flags = "509"
+indices = "187"
+position = "(105.0, 0.0, 105.0)" />
+<node 
+flags = "256"
+indices = "188"
+position = "(135.0, 50.0, 105.0)" />
+<node 
+flags = "503"
+indices = "189"
+position = "(165.0, 0.0, 105.0)" />
+<node 
+flags = "511"
+indices = "190"
+position = "(195.0, 0.0, 105.0)" />
+<node 
+flags = "461"
+indices = "191"
+position = "(225.0, 0.0, 105.0)" />
+<node 
+flags = "311"
+indices = "192"
+position = "(-225.0, 0.0, 135.0)" />
+<node 
+flags = "511"
+indices = "193"
+position = "(-195.0, 0.0, 135.0)" />
+<node 
+flags = "511"
+indices = "194"
+position = "(-165.0, 0.0, 135.0)" />
+<node 
+flags = "511"
+indices = "195"
+position = "(-135.0, 0.0, 135.0)" />
+<node 
+flags = "479"
+indices = "196"
+position = "(-105.0, 0.0, 135.0)" />
+<node 
+flags = "507"
+indices = "197"
+position = "(-75.0, 0.0, 135.0)" />
+<node 
+flags = "447"
+indices = "198"
+position = "(-45.0, 0.0, 135.0)" />
+<node 
+flags = "511"
+indices = "199"
+position = "(-15.0, 0.0, 135.0)" />
+<node 
+flags = "511"
+indices = "200"
+position = "(15.0, 0.0, 135.0)" />
+<node 
+flags = "511"
+indices = "201"
+position = "(45.0, 0.0, 135.0)" />
+<node 
+flags = "511"
+indices = "202"
+position = "(75.0, 0.0, 135.0)" />
+<node 
+flags = "495"
+indices = "203"
+position = "(105.0, 0.0, 135.0)" />
+<node 
+flags = "510"
+indices = "204"
+position = "(135.0, 0.0, 135.0)" />
+<node 
+flags = "383"
+indices = "205"
+position = "(165.0, 0.0, 135.0)" />
+<node 
+flags = "511"
+indices = "206"
+position = "(195.0, 0.0, 135.0)" />
+<node 
+flags = "461"
+indices = "207"
+position = "(225.0, 0.0, 135.0)" />
+<node 
+flags = "311"
+indices = "208"
+position = "(-225.0, 0.0, 165.0)" />
+<node 
+flags = "511"
+indices = "209"
+position = "(-195.0, 0.0, 165.0)" />
+<node 
+flags = "511"
+indices = "210"
+position = "(-165.0, 0.0, 165.0)" />
+<node 
+flags = "511"
+indices = "211"
+position = "(-135.0, 0.0, 165.0)" />
+<node 
+flags = "477"
+indices = "212"
+position = "(-105.0, 0.0, 165.0)" />
+<node 
+flags = "260"
+indices = "213"
+position = "(-75.0, 50.0, 165.0)" />
+<node 
+flags = "439"
+indices = "214"
+position = "(-45.0, 0.0, 165.0)" />
+<node 
+flags = "511"
+indices = "215"
+position = "(-15.0, 0.0, 165.0)" />
+<node 
+flags = "511"
+indices = "216"
+position = "(15.0, 0.0, 165.0)" />
+<node 
+flags = "511"
+indices = "217"
+position = "(45.0, 0.0, 165.0)" />
+<node 
+flags = "511"
+indices = "218"
+position = "(75.0, 0.0, 165.0)" />
+<node 
+flags = "511"
+indices = "219"
+position = "(105.0, 0.0, 165.0)" />
+<node 
+flags = "511"
+indices = "220"
+position = "(135.0, 0.0, 165.0)" />
+<node 
+flags = "511"
+indices = "221"
+position = "(165.0, 0.0, 165.0)" />
+<node 
+flags = "511"
+indices = "222"
+position = "(195.0, 0.0, 165.0)" />
+<node 
+flags = "461"
+indices = "223"
+position = "(225.0, 0.0, 165.0)" />
+<node 
+flags = "311"
+indices = "224"
+position = "(-225.0, 0.0, 195.0)" />
+<node 
+flags = "511"
+indices = "225"
+position = "(-195.0, 0.0, 195.0)" />
+<node 
+flags = "511"
+indices = "226"
+position = "(-165.0, 0.0, 195.0)" />
+<node 
+flags = "511"
+indices = "227"
+position = "(-135.0, 0.0, 195.0)" />
+<node 
+flags = "493"
+indices = "228"
+position = "(-105.0, 0.0, 195.0)" />
+<node 
+flags = "257"
+indices = "229"
+position = "(-75.0, 50.0, 195.0)" />
+<node 
+flags = "375"
+indices = "230"
+position = "(-45.0, 0.0, 195.0)" />
+<node 
+flags = "511"
+indices = "231"
+position = "(-15.0, 0.0, 195.0)" />
+<node 
+flags = "511"
+indices = "232"
+position = "(15.0, 0.0, 195.0)" />
+<node 
+flags = "511"
+indices = "233"
+position = "(45.0, 0.0, 195.0)" />
+<node 
+flags = "511"
+indices = "234"
+position = "(75.0, 0.0, 195.0)" />
+<node 
+flags = "511"
+indices = "235"
+position = "(105.0, 0.0, 195.0)" />
+<node 
+flags = "511"
+indices = "236"
+position = "(135.0, 0.0, 195.0)" />
+<node 
+flags = "511"
+indices = "237"
+position = "(165.0, 0.0, 195.0)" />
+<node 
+flags = "511"
+indices = "238"
+position = "(195.0, 0.0, 195.0)" />
+<node 
+flags = "461"
+indices = "239"
+position = "(225.0, 0.0, 195.0)" />
+<node 
+flags = "275"
+indices = "240"
+position = "(-225.0, 0.0, 225.0)" />
+<node 
+flags = "411"
+indices = "241"
+position = "(-195.0, 0.0, 225.0)" />
+<node 
+flags = "411"
+indices = "242"
+position = "(-165.0, 0.0, 225.0)" />
+<node 
+flags = "411"
+indices = "243"
+position = "(-135.0, 0.0, 225.0)" />
+<node 
+flags = "395"
+indices = "244"
+position = "(-105.0, 0.0, 225.0)" />
+<node 
+flags = "410"
+indices = "245"
+position = "(-75.0, 0.0, 225.0)" />
+<node 
+flags = "283"
+indices = "246"
+position = "(-45.0, 0.0, 225.0)" />
+<node 
+flags = "411"
+indices = "247"
+position = "(-15.0, 0.0, 225.0)" />
+<node 
+flags = "411"
+indices = "248"
+position = "(15.0, 0.0, 225.0)" />
+<node 
+flags = "411"
+indices = "249"
+position = "(45.0, 0.0, 225.0)" />
+<node 
+flags = "411"
+indices = "250"
+position = "(75.0, 0.0, 225.0)" />
+<node 
+flags = "411"
+indices = "251"
+position = "(105.0, 0.0, 225.0)" />
+<node 
+flags = "411"
+indices = "252"
+position = "(135.0, 0.0, 225.0)" />
+<node 
+flags = "411"
+indices = "253"
+position = "(165.0, 0.0, 225.0)" />
+<node 
+flags = "411"
+indices = "254"
+position = "(195.0, 0.0, 225.0)" />
+<node 
+flags = "393"
+indices = "255"
+position = "(225.0, 0.0, 225.0)" />
+</Nodes>
+</Grid>

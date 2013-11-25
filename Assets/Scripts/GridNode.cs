@@ -19,7 +19,7 @@ public class GridNode{
 
 	public int flags;
 	//The first 24 bits, of indices, carry the index of this node in the graph specified by the last 8 bits.
-	int indices;
+	public int indices;
 	public Vector3 position;
     public int curent_list=2;
     public float cost=0;

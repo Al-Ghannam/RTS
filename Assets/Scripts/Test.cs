@@ -22,12 +22,16 @@ public class Test : MonoBehaviour {
 		//GridGraph grid = new GridGraph();
 		GameObject gridCarrier = new GameObject("GridCarrier");
 		grid = gridCarrier.AddComponent<GridGraph>();
-		grid.center = center;
-		grid.width = (int)width;
-		grid.depth = (int)depth;
-		grid.rotation = rotation;
-		grid.setGraphSize();
-		grid.scan();
+        
+        //grid.center = center;
+        //grid.width = (int)width;
+        //grid.depth = (int)depth;
+        //grid.rotation = rotation;
+        //grid.setGraphSize();
+        //grid.scan();
+        //grid.saveGrid();
+
+        grid.loadGrid("Assets/SavedGrids/grid.xml");
 		GameObject aStarCarrier = new GameObject("AStarCarrier");
 		GridNode start = new GridNode();
 		start = grid.getNodes()[2];

@@ -1,6 +1,9 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.IO;
+using System.Xml;
 
 public class GridGraph : MonoBehaviour {
 	
@@ -247,7 +250,73 @@ public class GridGraph : MonoBehaviour {
         return Mathf.Sqrt((dx * dx) + (dy * dy));
     }
 	
-	public void OnDrawGizmos(){		
+	public void saveGrid()
+	{
+        List<string> lines = new List<string>();
+        lines.Add(@"<?xml version=""1.0""?>");
+
+        //Grid specific info:
+        lines.Add("<Grid width = \"" + width + "\"");
+        lines.Add("depth = \"" + depth + "\"" );
+        lines.Add("center = \"" + center + "\"");
+        lines.Add("rotation = \"" + rotation + "\"");
+        lines.Add("nodeSize = \"" + nodeSize + "\"");
+        lines.Add("maxClimbAxis = \"" + maxClimbAxis + "\"");
+        lines.Add("maxClimb = \"" + maxClimb + "\"");
+        lines.Add("maxSlope = \"" + maxSlope + "\"");
+        lines.Add("heightCheck = \"" + heightCheck + "\"");
+        lines.Add("heightMask = \"" + heightMask + "\"");
+        lines.Add("numOfNeighbours = \"" + numOfNeighbours + "\"" + ">");
+
+        //Nodes info:
+        lines.Add("<Nodes count = \"" + nodes.Length + "\"" + ">");
+        foreach (GridNode node in nodes)
+        {
+            lines.Add("<node ");
+            lines.Add("flags = \"" + node.flags + "\"");
+            lines.Add("indices = \"" + node.indices + "\"");
+            lines.Add("position = \"" + node.position + "\"" + " />");
+        }
+        lines.Add("</Nodes>");
+
+        lines.Add("</Grid>");
+        System.IO.File.WriteAllLines("Assets/SavedGrids/grid.xml", lines.ToArray());
+	}
+
+    public void loadGrid(string filePath)
+    {
+        XmlDocument doc = new XmlDocument();
+        doc.Load(filePath);
+        XmlNode gridData = doc.SelectSingleNode("Grid");
+        width = int.Parse(gridData.Attributes[0].Value);
+        depth = int.Parse(gridData.Attributes[1].Value);
+        center = parseVector3(gridData.Attributes[2].Value);
+        rotation = parseVector3(gridData.Attributes[3].Value);
+        nodeSize = float.Parse(gridData.Attributes[4].Value);
+        maxClimbAxis = int.Parse(gridData.Attributes[5].Value);
+        maxClimb = float.Parse(gridData.Attributes[6].Value);
+        maxSlope = float.Parse(gridData.Attributes[7].Value);
+        heightCheck = bool.Parse(gridData.Attributes[8].Value);
+        //heightMask = int.Parse(gridData.Attributes[9].Value);
+        numOfNeighbours = int.Parse(gridData.Attributes[10].Value);
+        setGraphSize();
+
+        XmlNode NodeData = doc.SelectSingleNode("Grid/Nodes");
+        int nodeCount = int.Parse(NodeData.Attributes[0].Value);
+        createNodes(nodeCount);
+        setNeighbourCosts();
+        setNeighbourOffsets();
+        for (int i = 0; i < nodes.Length; i++)
+        {
+            nodes[i].flags = int.Parse(NodeData.ChildNodes[i].Attributes[0].Value);
+            nodes[i].indices = int.Parse(NodeData.ChildNodes[i].Attributes[1].Value);
+            nodes[i].position = parseVector3(NodeData.ChildNodes[i].Attributes[2].Value);
+        }
+        Debug.Log("XMLING: " + nodes[100].position);
+    }
+
+    public void OnDrawGizmos()
+    {		
 		Gizmos.color = Color.white;
 		//Gizmos.DrawLine(new Vector3(110,1,10), new Vector3(10,1,10));
 		//Gizmos.matrix = boundsMatrix;
@@ -273,4 +342,28 @@ public class GridGraph : MonoBehaviour {
 		nodes = null;	
 	}
 	
+    
+    private Vector3 parseVector3(string sourceString) {
+     
+        string outString;
+        Vector3 outVector3;
+        string[] splitString;
+     
+        // Trim extranious parenthesis
+       
+        outString = sourceString.Substring(1, sourceString.Length - 2);
+     
+        // Split delimted values into an array
+       
+        splitString = outString.Split("," [0]);
+       
+        // Build new Vector3 from array elements
+       
+        outVector3.x = float.Parse(splitString[0]);
+        outVector3.y = float.Parse(splitString[1]);
+        outVector3.z = float.Parse(splitString[2]);
+       
+        return outVector3;
+    }
+
 }
