@@ -8,6 +8,10 @@ public class Test : MonoBehaviour {
 	public int nodeSize = 1;
 	public List<Vector3> path = new List<Vector3>();
 	float width, depth;
+	public Vector3 startPosition = new Vector3();
+	public Vector3 endPosition = new Vector3();
+	public GridGraph grid;
+	
 	// Use this for initialization
 	void Start () {
 		Vector3 center = plane.transform.renderer.bounds.center;
@@ -17,7 +21,7 @@ public class Test : MonoBehaviour {
 		
 		//GridGraph grid = new GridGraph();
 		GameObject gridCarrier = new GameObject("GridCarrier");
-		GridGraph grid = gridCarrier.AddComponent<GridGraph>();
+		grid = gridCarrier.AddComponent<GridGraph>();
 		grid.center = center;
 		grid.width = (int)width;
 		grid.depth = (int)depth;
@@ -36,6 +40,48 @@ public class Test : MonoBehaviour {
         Debug.Log(path.Count);
 	}
 	
+	public void Update()
+	{
+		if(Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.LeftShift))
+		{
+			startPosition = shootRay(Input.mousePosition);
+			startPosition = grid.getNearest(startPosition).position;
+			Debug.Log("s: " + startPosition);
+		}
+		else if(Input.GetMouseButtonDown(0) && Input.GetKey(KeyCode.LeftShift))
+		{
+			endPosition = shootRay(Input.mousePosition);
+			Debug.Log("e: " + endPosition);
+		}
+		if(Input.GetMouseButtonDown(1))
+		{
+			//Debug.Log("s: " + startPosition);
+			//Debug.Log("e: " + endPosition);
+			path = new List<Vector3>();
+			GridNode startNode = new GridNode();
+			startNode = grid.getNearest(startPosition);
+			startPosition = startNode.position;
+			GridNode endNode = new GridNode();
+			endNode = grid.getNearest(endPosition);
+			endPosition = endNode.position;
+			GameObject aStarCarrier = new GameObject("AStarCarrier");
+			A_Star aStar = aStarCarrier.AddComponent<A_Star>();
+			aStar.A_StarSetGrid(grid);
+			path = aStar.FindVectorPath(startNode,endNode);
+		}
+	}
+	
+	private Vector3 shootRay(Vector3 pos)
+	{
+		Ray ray = Camera.main.ScreenPointToRay(pos);
+		RaycastHit hit;
+		if(Physics.Raycast(ray,out hit,Mathf.Infinity)){
+			return hit.point;
+		}
+		else
+			return Vector3.zero;
+	}
+	
 	public void OnDrawGizmos(){		
 		
 		//Draw nodes.
@@ -46,9 +92,9 @@ public class Test : MonoBehaviour {
 			if(i < path.Count-1)
 				Gizmos.DrawLine(path[i],path[i+1]);
 		}
-	}
-	
-	// Update is called once per frame
-	void Update () {
+		
+		Gizmos.color = Color.red;
+		Gizmos.DrawSphere(startPosition, 4F);
+		Gizmos.DrawSphere(endPosition, 4F);
 	}
 }
