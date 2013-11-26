@@ -336,9 +336,9 @@ public class GridGraph : MonoBehaviour {
                     if (neighbour.getConnection(index) ||
                         node.getConnection(i))
                     {
-                        neighbour.setConnection(index, 0);
+                        neighbour.setConnection(index, walkable? 1:0);
                     }
-                    node.setConnection(i, 0);
+                    node.setConnection(i, walkable? 1:0);
                 }
             }
         }
