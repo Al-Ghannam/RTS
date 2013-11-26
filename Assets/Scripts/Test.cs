@@ -11,6 +11,7 @@ public class Test : MonoBehaviour {
 	public Vector3 startPosition = new Vector3();
 	public Vector3 endPosition = new Vector3();
 	public GridGraph grid;
+    public GameObject prefab;
 	
 	// Use this for initialization
 	void Start () {
@@ -35,7 +36,7 @@ public class Test : MonoBehaviour {
 	
 	public void Update()
 	{
-		if(Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.LeftShift))
+		/*if(Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.LeftShift))
 		{
 			startPosition = shootRay(Input.mousePosition);
             //Debug.Log("s: " + startPosition);
@@ -62,7 +63,16 @@ public class Test : MonoBehaviour {
 			A_Star aStar = aStarCarrier.AddComponent<A_Star>();
 			aStar.A_StarSetGrid(grid);
 			path = aStar.FindVectorPath(startNode,endNode);
-		}
+		}*/
+        if (Input.GetMouseButtonDown(0))
+        {
+            GameObject box;
+            Vector3 boxPosition = shootRay(Input.mousePosition);
+            boxPosition.y = 25;
+            box = Instantiate(prefab, boxPosition, Quaternion.identity) as GameObject;
+            grid.updateGrid(box.collider.bounds, false);
+            //box.transform.position = new Vector3(100,100,100);
+        }
 	}
 	
 	private Vector3 shootRay(Vector3 pos)
