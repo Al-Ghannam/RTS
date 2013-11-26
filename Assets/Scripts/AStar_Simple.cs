@@ -58,9 +58,10 @@ public class A_Star : MonoBehaviour
         {
             return gcost;
         }
-        public void setgcost(float prev_cost)
+        public void setgcost(float g_cost)
         {
-            gcost = prev_cost + 1;
+            //gcost = prev_cost + 1;
+			gcost=g_cost;
             fcost = hcost + gcost;
         }
         public void sethcost(float cost)
@@ -138,13 +139,12 @@ public class A_Star : MonoBehaviour
                     lookup_node[current_adj.get_position()] = current_adj;
                     Debug.Log("adjacent " + current_adj.get_position()+" option 1");
                 }
-                else if (current_adj.get_list() == current_open)
+                else 
                 {
-                    // node is in openList
                     if (current_adj.get_gcost() > lookup_node[CurrentGridNode.position].get_gcost())
                     { // costs from current node are cheaper than previous costs
                         current_adj.set_prev_position(CurrentGridNode.position); // set current node as previous for this node
-                        current_adj.setgcost(lookup_node[CurrentGridNode.position].get_gcost());// set g costs of this node (costs from start to this node)
+                        current_adj.setgcost(/*lookup_node[CurrentGridNode.position].get_gcost()+*/euclidean(current_adj.getnode().position,CurrentGridNode.position));// set g costs of this node (costs from start to this node)
                         lookup_node[current_adj.get_position()] = current_adj;
                         Debug.Log("adjacent " + current_adj.get_position());
                     }
@@ -187,7 +187,7 @@ public class A_Star : MonoBehaviour
 					nodeStruct = new NodeStruct();
 					nodeStruct.set_list(current_neither);
 					
-					nodeStruct.setgcost(node1.get_gcost());
+					nodeStruct.setgcost(/*node1.get_gcost()+*/euclidean(node1.getnode().position,tempNode.position));
 					nodeStruct.setnode(tempNode);
 					lookup_node.Add(tempNode.position,nodeStruct);
 				}
@@ -212,6 +212,22 @@ public class A_Star : MonoBehaviour
 
         return ((min_d) + (((2 * min_d))));
     }
+	private float distance_cached=-1;
+	private float euclidean(Vector3 position1,Vector3 position2)
+	{
+		if(distance_cached<0)
+		{
+					float x1=position1.x;
+		float y1=position1.z;
+		float x2=position2.x;
+		float y2=position2.z;
+		
+		float dx = Mathf.Abs(x1 - x2);
+        float dy = Mathf.Abs(y1 - y2);
+			distance_cached=Mathf.Sqrt((dx * dx) + (dy * dy));
+		}
+        return  distance_cached;
+	}
     private float Heuristic_Euclidean(float x, float y)
     {
         float dx = Mathf.Abs(GoalGridNode.position.x - x);
