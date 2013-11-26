@@ -131,7 +131,7 @@ public class A_Star : MonoBehaviour
                 if (current_adj.get_list() != current_open) //node is not in openlist
                 {
                     current_adj.set_prev_position(CurrentGridNode.position);// set current node as previous for this node
-                    current_adj.sethcost(Heuristic_Euclidean(current_adj.get_position().x, current_adj.get_position().y));// set h costs of this node (estimated costs to goal)
+                    current_adj.sethcost(Heuristic_Euclidean(current_adj.get_position().x, current_adj.get_position().z));// set h costs of this node (estimated costs to goal)
                     //current_adj.setgcost(lookup_node[CurrentGridNode.position].get_gcost()); // set g costs of this node (costs from start to this node)
                     current_adj.set_list(current_open);
                     Openlist.Add(current_adj);// add node to openList

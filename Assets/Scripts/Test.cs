@@ -14,12 +14,11 @@ public class Test : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		Vector3 center = plane.transform.renderer.bounds.center;
-		width = plane.collider.bounds.size.x/nodeSize;
-		depth = plane.collider.bounds.size.z/nodeSize;
-		Vector3 rotation = plane.transform.eulerAngles;
-		
-		//GridGraph grid = new GridGraph();
+        //Vector3 center = plane.transform.renderer.bounds.center;
+        //width = plane.collider.bounds.size.x/nodeSize;
+        //depth = plane.collider.bounds.size.z/nodeSize;
+        //Vector3 rotation = plane.transform.eulerAngles;
+
 		GameObject gridCarrier = new GameObject("GridCarrier");
 		grid = gridCarrier.AddComponent<GridGraph>();
         
@@ -32,16 +31,6 @@ public class Test : MonoBehaviour {
         //grid.saveGrid();
 
         grid.loadGrid("Assets/SavedGrids/grid.xml");
-		GameObject aStarCarrier = new GameObject("AStarCarrier");
-		GridNode start = new GridNode();
-		start = grid.getNodes()[2];
-		GridNode goal = new GridNode();
-		goal = grid.getNodes()[120];
-		Debug.Log(start.position);
-		A_Star aStar = aStarCarrier.AddComponent<A_Star>();
-		aStar.A_StarSetGrid(grid);
-		path = aStar.FindVectorPath(start, goal);
-        Debug.Log(path.Count);
 	}
 	
 	public void Update()
@@ -49,8 +38,9 @@ public class Test : MonoBehaviour {
 		if(Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.LeftShift))
 		{
 			startPosition = shootRay(Input.mousePosition);
+            //Debug.Log("s: " + startPosition);
+
 			startPosition = grid.getNearest(startPosition).position;
-			Debug.Log("s: " + startPosition);
 		}
 		else if(Input.GetMouseButtonDown(0) && Input.GetKey(KeyCode.LeftShift))
 		{

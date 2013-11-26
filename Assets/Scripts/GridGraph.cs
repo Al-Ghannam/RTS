@@ -223,31 +223,30 @@ public class GridGraph : MonoBehaviour {
 	
 	public GridNode getNearest(Vector3 pos)
 	{
-		Debug.Log(pos);
 		int index = nodes.Length/2;
 		float nearestFound = Mathf.Infinity;
 		int nearestNode = 0;
 		float currDistance;
+        
 		foreach(GridNode node in nodes)
 		{
 			currDistance = euclideanDistance(pos, node.position);
-			//Debug.Log("curr: " + currDistance + " - nearest: " + nearestFound);
 			if(currDistance < nearestFound)
 			{
 				nearestFound = currDistance;
 				nearestNode = node.getIndex();
 			}
 		}
-		Debug.Log(nearestNode);
+
 		return nodes[nearestNode];
 	}
 	
 	private float euclideanDistance(Vector3 v1, Vector3 v2)
     {
         float dx = Mathf.Abs(v1.x - v2.x);
-        float dy = Mathf.Abs(v1.y - v2.y);
+        float dz = Mathf.Abs(v1.z - v2.z);
 
-        return Mathf.Sqrt((dx * dx) + (dy * dy));
+        return Mathf.Sqrt((dx * dx) + (dz * dz));
     }
 	
 	public void saveGrid()
